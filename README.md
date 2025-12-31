@@ -5,6 +5,14 @@
 
 ---
 
+## Schwester-Repositories
+
+Für Laravel-Projekte gibt es ein spezielles Schwester-Repository mit Laravel-spezifischen Integrationen und Beispielen:
+
+- **[trafficdesign-tool-ui-kit-laravel](https://github.com/simse0/trafficdesign-tool-ui-kit-laravel)** - Laravel-Integration des trafficdesign UI Kits
+
+---
+
 ## In eigenes Projekt integrieren
 
 ### Schritt 1: Repository klonen
