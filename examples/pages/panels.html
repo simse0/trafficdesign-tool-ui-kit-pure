@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panels & Layouts - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Layouts</div>
+          <a href="panels.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+            </svg>
+            Panels & Layouts
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Panels & Layouts</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Panels & Layouts</h1>
+          <p class="text-surface-500 mt-1">Verschiedene Panel-Typen und Layout-Strukturen.</p>
+        </div>
+        
+        <!-- Card Variants -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Card-Varianten</h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            
+            <!-- Basic Card -->
+            <div class="card">
+              <div class="card-body">
+                <h3 class="font-semibold mb-2">Basic Card</h3>
+                <p class="text-surface-500 text-sm">Eine einfache Card ohne Header oder Footer.</p>
+              </div>
+            </div>
+            
+            <!-- Card with Header -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="font-semibold">Card mit Header</h3>
+              </div>
+              <div class="card-body">
+                <p class="text-surface-500 text-sm">Card mit abgetrenntem Header-Bereich.</p>
+              </div>
+            </div>
+            
+            <!-- Card with Footer -->
+            <div class="card">
+              <div class="card-body">
+                <h3 class="font-semibold mb-2">Card mit Footer</h3>
+                <p class="text-surface-500 text-sm">Card mit Action-Footer.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-secondary">Abbrechen</button>
+                <button class="btn btn-sm btn-primary">Speichern</button>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Tool Cards -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Tool Cards</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+            
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Tool Card Standard</h3>
+                <span class="badge badge-primary">Aktiv</span>
+              </div>
+              <div class="card-tool-body">
+                <p class="text-surface-500 text-sm">Die Standard-Variante für Tool-Interfaces mit Header und Body.</p>
+              </div>
+            </div>
+            
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Mit Actions</h3>
+                <div class="flex gap-2">
+                  <button class="btn-icon btn-icon-sm">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                  </button>
+                  <button class="btn-icon btn-icon-sm">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card-tool-body">
+                <p class="text-surface-500 text-sm">Tool Card mit Action-Buttons im Header.</p>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Stat Cards -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Statistik-Cards</h2>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+            
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background-color: var(--td-brand-primary-light); color: var(--td-brand-primary);">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <div class="stat-card-content">
+                <div class="stat-card-value">1.234</div>
+                <div class="stat-card-label">Benutzer</div>
+              </div>
+              <div class="stat-card-trend stat-card-trend-up">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+                +12%
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background-color: var(--td-success-light); color: var(--td-success);">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="stat-card-content">
+                <div class="stat-card-value">€45.231</div>
+                <div class="stat-card-label">Umsatz</div>
+              </div>
+              <div class="stat-card-trend stat-card-trend-up">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+                +8.2%
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background-color: var(--td-warning-light); color: var(--td-warning);">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="stat-card-content">
+                <div class="stat-card-value">89</div>
+                <div class="stat-card-label">Aufgaben</div>
+              </div>
+              <div class="stat-card-trend stat-card-trend-down">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
+                </svg>
+                -3.1%
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-card-icon" style="background-color: var(--td-error-light); color: var(--td-error);">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="stat-card-content">
+                <div class="stat-card-value">7</div>
+                <div class="stat-card-label">Fehler</div>
+              </div>
+              <div class="stat-card-trend stat-card-trend-down">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
+                </svg>
+                -28%
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Collapsible Panels -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Collapsible Panels (Accordion)</h2>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-header" onclick="this.parentElement.classList.toggle('accordion-open')">
+                <span class="font-medium">Was ist das trafficdesign UI Kit?</span>
+                <svg class="accordion-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="accordion-content">
+                <p class="text-surface-600">Das trafficdesign UI Kit ist eine Sammlung von CSS-Komponenten und JavaScript-Utilities für moderne Web-Anwendungen. Es wurde speziell für Enterprise-Tools und Admin-Interfaces entwickelt.</p>
+              </div>
+            </div>
+            <div class="accordion-item accordion-open">
+              <button class="accordion-header" onclick="this.parentElement.classList.toggle('accordion-open')">
+                <span class="font-medium">Wie verwende ich das Kit?</span>
+                <svg class="accordion-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="accordion-content">
+                <p class="text-surface-600">Binde einfach die CSS-Datei <code>td-ui-kit.css</code> und die JavaScript-Datei <code>td-ui-kit.js</code> in dein Projekt ein. Danach kannst du alle Komponenten über ihre CSS-Klassen verwenden.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header" onclick="this.parentElement.classList.toggle('accordion-open')">
+                <span class="font-medium">Ist das Kit framework-unabhängig?</span>
+                <svg class="accordion-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="accordion-content">
+                <p class="text-surface-600">Ja! Diese Version funktioniert komplett ohne Framework-Abhängigkeiten. Du brauchst kein Alpine.js, Vue oder React. Alles wird mit Vanilla JavaScript und CSS realisiert.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Grid Layouts -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Grid-Layouts</h2>
+          
+          <h3 class="text-sm font-medium text-surface-600 mb-3">2-Spalten Layout</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="p-4 bg-brand-primary-light rounded-lg text-center">Spalte 1</div>
+            <div class="p-4 bg-brand-primary-light rounded-lg text-center">Spalte 2</div>
+          </div>
+          
+          <h3 class="text-sm font-medium text-surface-600 mb-3">3-Spalten Layout</h3>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="p-4 bg-success-light rounded-lg text-center">Spalte 1</div>
+            <div class="p-4 bg-success-light rounded-lg text-center">Spalte 2</div>
+            <div class="p-4 bg-success-light rounded-lg text-center">Spalte 3</div>
+          </div>
+          
+          <h3 class="text-sm font-medium text-surface-600 mb-3">Sidebar Layout (1:3)</h3>
+          <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="p-4 bg-warning-light rounded-lg text-center">Sidebar</div>
+            <div class="p-4 bg-warning-light rounded-lg text-center">Main Content</div>
+          </div>
+          
+          <h3 class="text-sm font-medium text-surface-600 mb-3">Holy Grail Layout</h3>
+          <div style="display: grid; grid-template-columns: 200px 1fr 200px; gap: 1rem;">
+            <div class="p-4 bg-surface-100 rounded-lg text-center">Links</div>
+            <div class="p-4 bg-surface-100 rounded-lg text-center">Inhalt</div>
+            <div class="p-4 bg-surface-100 rounded-lg text-center">Rechts</div>
+          </div>
+        </section>
+        
+        <!-- Split Panels -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Split Panels</h2>
+          <div class="split-panel">
+            <div class="split-panel-left">
+              <h3 class="font-semibold mb-2">Linker Bereich</h3>
+              <p class="text-surface-500 text-sm">Dieser Bereich kann z.B. eine Liste oder Navigation enthalten.</p>
+              <ul class="mt-3 space-y-2">
+                <li class="p-2 bg-surface-50 rounded">Item 1</li>
+                <li class="p-2 bg-brand-primary-light rounded">Item 2 (aktiv)</li>
+                <li class="p-2 bg-surface-50 rounded">Item 3</li>
+              </ul>
+            </div>
+            <div class="split-panel-right">
+              <h3 class="font-semibold mb-2">Rechter Bereich</h3>
+              <p class="text-surface-500 text-sm">Der Hauptinhalt wird hier angezeigt. Dieser Bereich nimmt den restlichen Platz ein.</p>
+              <div class="mt-4 p-4 bg-surface-50 rounded-lg">
+                <p class="text-surface-600">Detailansicht für das ausgewählte Element...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benachrichtigungen - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Komponenten</div>
+          <a href="elements.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+            Elemente
+          </a>
+          <a href="tables.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            Tabellen
+          </a>
+          <a href="forms.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Formulare
+          </a>
+          <a href="notifications.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+            Benachrichtigungen
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Benachrichtigungen</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Benachrichtigungen</h1>
+          <p class="text-surface-500 mt-1">Alerts, Toasts und andere Benachrichtigungs-Komponenten.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Alerts -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Alerts</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div class="alert alert-success">
+                  <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <div class="alert-content">
+                    <div class="alert-title">Erfolgreich!</div>
+                    <div>Ihre Änderungen wurden erfolgreich gespeichert.</div>
+                  </div>
+                </div>
+                
+                <div class="alert alert-info">
+                  <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <div class="alert-content">
+                    <div class="alert-title">Information</div>
+                    <div>Neue Updates sind verfügbar.</div>
+                  </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                  <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                  </svg>
+                  <div class="alert-content">
+                    <div class="alert-title">Warnung</div>
+                    <div>Ihr Abonnement läuft bald ab.</div>
+                  </div>
+                </div>
+                
+                <div class="alert alert-error">
+                  <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <div class="alert-content">
+                    <div class="alert-title">Fehler</div>
+                    <div>Beim Speichern ist ein Fehler aufgetreten.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Toast Notifications -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Toast Notifications</h2>
+            </div>
+            <div class="card-tool-body">
+              <p class="text-sm text-surface-500 mb-4">
+                Klicke auf die Buttons um verschiedene Toast-Notifications auszulösen:
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <button class="btn btn-success btn-sm" onclick="notify('Erfolgreich gespeichert!', 'success')">
+                  Success Toast
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="notify('Neue Nachricht erhalten', 'info')">
+                  Info Toast
+                </button>
+                <button class="btn btn-secondary btn-sm" style="background: var(--td-warning); border-color: var(--td-warning); color: white;" onclick="notify('Bitte überprüfen Sie die Eingabe', 'warning')">
+                  Warning Toast
+                </button>
+                <button class="btn btn-danger btn-sm" onclick="notify('Ein Fehler ist aufgetreten', 'error')">
+                  Error Toast
+                </button>
+              </div>
+              
+              <p class="text-sm text-surface-500 mb-2">Code-Beispiel:</p>
+              <pre class="p-3 bg-surface-100 rounded text-sm overflow-x-auto"><code>// Toast mit Typ und Dauer
+notify('Nachricht', 'success');
+notify('Fehler!', 'error', 3000);</code></pre>
+            </div>
+          </div>
+          
+          <!-- Static Toast Examples -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Toast Varianten (statisch)</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div class="toast toast-success" style="position: relative; animation: none;">
+                  <span>Erfolgreich gespeichert!</span>
+                  <button class="toast-close">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+                
+                <div class="toast toast-info" style="position: relative; animation: none;">
+                  <span>Neue Nachricht erhalten</span>
+                  <button class="toast-close">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+                
+                <div class="toast toast-warning" style="position: relative; animation: none;">
+                  <span>Bitte überprüfen Sie die Eingabe</span>
+                  <button class="toast-close">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+                
+                <div class="toast toast-error" style="position: relative; animation: none;">
+                  <span>Ein Fehler ist aufgetreten</span>
+                  <button class="toast-close">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Empty State -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Empty State</h2>
+            </div>
+            <div class="card-tool-body">
+              <div class="empty-state">
+                <svg class="empty-state-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+                </svg>
+                <h3 class="empty-state-title">Keine Nachrichten</h3>
+                <p class="empty-state-description">
+                  Sie haben derzeit keine Benachrichtigungen. Neue Nachrichten werden hier angezeigt.
+                </p>
+                <button class="btn btn-primary mt-4">Posteingang aktualisieren</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Timeline -->
+        <div class="card-tool mt-6">
+          <div class="card-tool-header">
+            <h2 class="font-semibold">Aktivitäts-Timeline</h2>
+          </div>
+          <div class="card-tool-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker-success"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Dokument freigegeben</div>
+                  <div class="timeline-time">vor 5 Minuten</div>
+                  <div class="timeline-description">Anna Klein hat das Dokument "Jahresbericht 2025" freigegeben.</div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker-primary"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Neuer Kommentar</div>
+                  <div class="timeline-time">vor 23 Minuten</div>
+                  <div class="timeline-description">Thomas Müller hat einen Kommentar zu Ihrem Projekt hinzugefügt.</div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Projekt aktualisiert</div>
+                  <div class="timeline-time">vor 1 Stunde</div>
+                  <div class="timeline-description">Das Projekt "Website Redesign" wurde aktualisiert.</div>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker-success"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Aufgabe abgeschlossen</div>
+                  <div class="timeline-time">vor 2 Stunden</div>
+                  <div class="timeline-description">Sarah Bauer hat die Aufgabe "Design Review" abgeschlossen.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

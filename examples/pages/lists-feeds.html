@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listen & Feeds - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Erweitert</div>
+          <a href="loading-states.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            Ladezustände
+          </a>
+          <a href="lists-feeds.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+            Listen & Feeds
+          </a>
+          <a href="advanced-inputs.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+            Erweiterte Inputs
+          </a>
+          <a href="context-actions.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+            </svg>
+            Kontext-Aktionen
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Listen & Feeds</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Listen & Feeds</h1>
+          <p class="text-surface-500 mt-1">Verschiedene Listendarstellungen und Activity Feeds.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+          
+          <!-- Activity Feed -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Activity Feed</h2>
+              <a href="#" class="text-sm text-brand-primary">Alle anzeigen</a>
+            </div>
+            <div class="card-tool-body">
+              <div class="activity-feed">
+                <div class="activity-item">
+                  <div class="activity-indicator activity-indicator-success"></div>
+                  <div class="activity-content">
+                    <div class="activity-header">
+                      <span class="font-medium">Anna Klein</span>
+                      <span class="activity-time">vor 5 Min.</span>
+                    </div>
+                    <p class="activity-text">Hat das Dokument <a href="#" class="text-brand-primary">Projektplan Q1</a> hochgeladen</p>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-indicator activity-indicator-primary"></div>
+                  <div class="activity-content">
+                    <div class="activity-header">
+                      <span class="font-medium">Thomas Müller</span>
+                      <span class="activity-time">vor 23 Min.</span>
+                    </div>
+                    <p class="activity-text">Hat einen Kommentar zu <a href="#" class="text-brand-primary">Task #234</a> hinzugefügt</p>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-indicator activity-indicator-warning"></div>
+                  <div class="activity-content">
+                    <div class="activity-header">
+                      <span class="font-medium">System</span>
+                      <span class="activity-time">vor 1 Std.</span>
+                    </div>
+                    <p class="activity-text">Backup wurde erfolgreich erstellt</p>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-indicator activity-indicator-error"></div>
+                  <div class="activity-content">
+                    <div class="activity-header">
+                      <span class="font-medium">Sarah Bauer</span>
+                      <span class="activity-time">vor 2 Std.</span>
+                    </div>
+                    <p class="activity-text">Hat das Projekt <a href="#" class="text-brand-primary">Website Redesign</a> archiviert</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- User List -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Team-Mitglieder</h2>
+              <button class="btn btn-sm btn-primary">+ Einladen</button>
+            </div>
+            <div class="card-tool-body">
+              <div class="user-list">
+                <div class="user-list-item">
+                  <div class="avatar avatar-md">
+                    <span>AK</span>
+                    <span class="avatar-status avatar-status-online"></span>
+                  </div>
+                  <div class="user-list-info">
+                    <div class="user-list-name">Anna Klein</div>
+                    <div class="user-list-meta">Administratorin</div>
+                  </div>
+                  <span class="badge badge-success">Online</span>
+                </div>
+                <div class="user-list-item">
+                  <div class="avatar avatar-md">
+                    <span>TM</span>
+                    <span class="avatar-status avatar-status-away"></span>
+                  </div>
+                  <div class="user-list-info">
+                    <div class="user-list-name">Thomas Müller</div>
+                    <div class="user-list-meta">Designer</div>
+                  </div>
+                  <span class="badge badge-warning">Abwesend</span>
+                </div>
+                <div class="user-list-item">
+                  <div class="avatar avatar-md">
+                    <span>SB</span>
+                    <span class="avatar-status avatar-status-busy"></span>
+                  </div>
+                  <div class="user-list-info">
+                    <div class="user-list-name">Sarah Bauer</div>
+                    <div class="user-list-meta">Entwicklerin</div>
+                  </div>
+                  <span class="badge badge-error">Beschäftigt</span>
+                </div>
+                <div class="user-list-item">
+                  <div class="avatar avatar-md">
+                    <span>MK</span>
+                    <span class="avatar-status avatar-status-offline"></span>
+                  </div>
+                  <div class="user-list-info">
+                    <div class="user-list-name">Max Kunde</div>
+                    <div class="user-list-meta">Projektmanager</div>
+                  </div>
+                  <span class="badge badge-neutral">Offline</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Task List -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Aufgaben</h2>
+              <span class="text-sm text-surface-500">3 von 5 erledigt</span>
+            </div>
+            <div class="card-tool-body">
+              <div class="task-list">
+                <label class="task-item task-completed">
+                  <input type="checkbox" class="task-checkbox" checked>
+                  <span class="task-text">Design Review durchführen</span>
+                  <span class="badge badge-success">Erledigt</span>
+                </label>
+                <label class="task-item task-completed">
+                  <input type="checkbox" class="task-checkbox" checked>
+                  <span class="task-text">API Dokumentation aktualisieren</span>
+                  <span class="badge badge-success">Erledigt</span>
+                </label>
+                <label class="task-item task-completed">
+                  <input type="checkbox" class="task-checkbox" checked>
+                  <span class="task-text">Bug in der Benutzeranmeldung beheben</span>
+                  <span class="badge badge-success">Erledigt</span>
+                </label>
+                <label class="task-item">
+                  <input type="checkbox" class="task-checkbox">
+                  <span class="task-text">Unit Tests schreiben</span>
+                  <span class="badge badge-warning">In Arbeit</span>
+                </label>
+                <label class="task-item">
+                  <input type="checkbox" class="task-checkbox">
+                  <span class="task-text">Deployment vorbereiten</span>
+                  <span class="badge badge-neutral">Offen</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Notification List -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Benachrichtigungen</h2>
+              <button class="btn btn-sm btn-ghost">Alle als gelesen markieren</button>
+            </div>
+            <div class="card-tool-body">
+              <div class="notification-list">
+                <div class="notification-item notification-unread">
+                  <div class="notification-icon notification-icon-info">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div class="notification-content">
+                    <p class="notification-text"><strong>Neue Nachricht</strong> von Anna Klein erhalten</p>
+                    <span class="notification-time">vor 2 Minuten</span>
+                  </div>
+                </div>
+                <div class="notification-item notification-unread">
+                  <div class="notification-icon notification-icon-success">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div class="notification-content">
+                    <p class="notification-text"><strong>Export abgeschlossen</strong> - Datei steht zum Download bereit</p>
+                    <span class="notification-time">vor 15 Minuten</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon notification-icon-warning">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                  </div>
+                  <div class="notification-content">
+                    <p class="notification-text"><strong>Speicherplatz</strong> fast aufgebraucht (90% belegt)</p>
+                    <span class="notification-time">vor 1 Stunde</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon notification-icon-error">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div class="notification-content">
+                    <p class="notification-text"><strong>Fehler</strong> beim Synchronisieren der Daten</p>
+                    <span class="notification-time">vor 3 Stunden</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline -->
+          <div class="card-tool" style="grid-column: span 2;">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Projekt-Timeline</h2>
+            </div>
+            <div class="card-tool-body">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker timeline-marker-success"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="font-medium">Projekt gestartet</h4>
+                      <span class="timeline-date">1. Januar 2025</span>
+                    </div>
+                    <p class="timeline-text">Kickoff-Meeting mit allen Stakeholdern durchgeführt.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker timeline-marker-success"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="font-medium">Design Phase abgeschlossen</h4>
+                      <span class="timeline-date">15. Januar 2025</span>
+                    </div>
+                    <p class="timeline-text">Alle Wireframes und Mockups wurden vom Kunden freigegeben.</p>
+                  </div>
+                </div>
+                <div class="timeline-item timeline-active">
+                  <div class="timeline-marker timeline-marker-primary"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="font-medium">Entwicklung</h4>
+                      <span class="timeline-date">Aktuell</span>
+                    </div>
+                    <p class="timeline-text">Frontend und Backend Implementierung läuft.</p>
+                    <div class="mt-2">
+                      <div class="progress-bar" style="width: 200px;">
+                        <div class="progress-bar-fill" style="width: 65%;"></div>
+                      </div>
+                      <span class="text-xs text-surface-500 mt-1">65% abgeschlossen</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="font-medium">Testing</h4>
+                      <span class="timeline-date">Geplant: 15. Februar 2025</span>
+                    </div>
+                    <p class="timeline-text">QA-Phase und Bugfixes.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="font-medium">Launch</h4>
+                      <span class="timeline-date">Geplant: 1. März 2025</span>
+                    </div>
+                    <p class="timeline-text">Go-Live und Monitoring.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

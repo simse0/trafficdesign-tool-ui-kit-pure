@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erweiterte Inputs - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Erweitert</div>
+          <a href="loading-states.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            Ladezustände
+          </a>
+          <a href="lists-feeds.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+            Listen & Feeds
+          </a>
+          <a href="advanced-inputs.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+            Erweiterte Inputs
+          </a>
+          <a href="context-actions.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+            </svg>
+            Kontext-Aktionen
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Erweiterte Inputs</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Erweiterte Inputs</h1>
+          <p class="text-surface-500 mt-1">Komplexere Eingabekomponenten für spezielle Anwendungsfälle.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+          
+          <!-- Toggle Switches -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Toggle Switches</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <label class="toggle-label">
+                  <span class="toggle-text">E-Mail Benachrichtigungen</span>
+                  <button class="toggle active" role="switch" aria-checked="true">
+                    <span class="toggle-handle"></span>
+                  </button>
+                </label>
+                <label class="toggle-label">
+                  <span class="toggle-text">Push-Nachrichten</span>
+                  <button class="toggle" role="switch" aria-checked="false">
+                    <span class="toggle-handle"></span>
+                  </button>
+                </label>
+                <label class="toggle-label">
+                  <span class="toggle-text">Zwei-Faktor-Authentifizierung</span>
+                  <button class="toggle active" role="switch" aria-checked="true">
+                    <span class="toggle-handle"></span>
+                  </button>
+                </label>
+                <label class="toggle-label">
+                  <span class="toggle-text">Automatische Updates</span>
+                  <button class="toggle" role="switch" aria-checked="false" disabled>
+                    <span class="toggle-handle"></span>
+                  </button>
+                  <span class="text-xs text-surface-400">(deaktiviert)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Range Sliders -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Range Sliders</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                  <label class="input-label">Lautstärke: <span id="volumeValue">50</span>%</label>
+                  <input type="range" class="range-slider" min="0" max="100" value="50" oninput="document.getElementById('volumeValue').textContent = this.value">
+                </div>
+                <div>
+                  <label class="input-label">Preisspanne: €<span id="priceValue">250</span></label>
+                  <input type="range" class="range-slider" min="0" max="1000" value="250" step="10" oninput="document.getElementById('priceValue').textContent = this.value">
+                </div>
+                <div>
+                  <label class="input-label">Qualität</label>
+                  <input type="range" class="range-slider" min="1" max="5" value="3" step="1">
+                  <div class="flex justify-between text-xs text-surface-400 mt-1">
+                    <span>Niedrig</span>
+                    <span>Mittel</span>
+                    <span>Hoch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Date & Time Inputs -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Datum & Zeit</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                  <label class="input-label">Datum</label>
+                  <input type="date" class="input">
+                </div>
+                <div>
+                  <label class="input-label">Zeit</label>
+                  <input type="time" class="input">
+                </div>
+                <div>
+                  <label class="input-label">Datum & Zeit</label>
+                  <input type="datetime-local" class="input">
+                </div>
+                <div>
+                  <label class="input-label">Monat</label>
+                  <input type="month" class="input">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Color Picker -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Farb- und Zahlen-Inputs</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                  <label class="input-label">Farbe auswählen</label>
+                  <div class="flex gap-2 items-center">
+                    <input type="color" class="color-picker" value="#00AFCE">
+                    <input type="text" class="input" value="#00AFCE" style="width: 120px;">
+                  </div>
+                </div>
+                <div>
+                  <label class="input-label">Anzahl</label>
+                  <input type="number" class="input" value="1" min="0" max="100" step="1">
+                </div>
+                <div>
+                  <label class="input-label">Betrag (€)</label>
+                  <input type="number" class="input" value="99.99" min="0" step="0.01">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- File Upload -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Datei-Upload</h2>
+            </div>
+            <div class="card-tool-body">
+              <div class="file-upload">
+                <input type="file" id="fileInput" style="display: none;" multiple>
+                <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--td-surface-300);">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+                <p class="mt-3 font-medium text-surface-700">Dateien hier ablegen</p>
+                <p class="text-sm text-surface-500">oder klicken zum Auswählen</p>
+                <p class="text-xs text-surface-400 mt-2">PNG, JPG, PDF bis 10MB</p>
+              </div>
+              
+              <!-- Uploaded Files Preview -->
+              <div class="mt-4">
+                <h4 class="text-sm font-medium text-surface-600 mb-2">Hochgeladene Dateien</h4>
+                <div class="file-list">
+                  <div class="file-item">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--td-brand-primary);">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <div class="file-info">
+                      <span class="file-name">Projektplan.pdf</span>
+                      <span class="file-size">2.4 MB</span>
+                    </div>
+                    <button class="btn-icon btn-icon-sm">
+                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="file-item">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--td-success);">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <div class="file-info">
+                      <span class="file-name">Screenshot.png</span>
+                      <span class="file-size">856 KB</span>
+                    </div>
+                    <button class="btn-icon btn-icon-sm">
+                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tag Input -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Tag Input</h2>
+            </div>
+            <div class="card-tool-body">
+              <label class="input-label">Tags</label>
+              <div class="tag-input">
+                <span class="tag">
+                  JavaScript
+                  <button class="tag-close">×</button>
+                </span>
+                <span class="tag">
+                  React
+                  <button class="tag-close">×</button>
+                </span>
+                <span class="tag">
+                  CSS
+                  <button class="tag-close">×</button>
+                </span>
+                <input type="text" class="tag-input-field" placeholder="Tag hinzufügen...">
+              </div>
+              <p class="input-hint">Drücke Enter um einen Tag hinzuzufügen</p>
+              
+              <label class="input-label mt-4">Kategorien (Mehrfachauswahl)</label>
+              <div class="chip-select">
+                <button class="chip chip-selected">Design</button>
+                <button class="chip">Development</button>
+                <button class="chip chip-selected">Marketing</button>
+                <button class="chip">Sales</button>
+                <button class="chip">Support</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Search with Autocomplete -->
+          <div class="card-tool" style="grid-column: span 2;">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Suche mit Autocomplete</h2>
+            </div>
+            <div class="card-tool-body">
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                <div>
+                  <label class="input-label">Benutzer suchen</label>
+                  <div class="autocomplete">
+                    <div class="input-with-icon">
+                      <svg class="input-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                      </svg>
+                      <input type="text" class="input" placeholder="Name eingeben..." id="userSearch">
+                    </div>
+                    <div class="autocomplete-dropdown" id="userDropdown" style="display: none;">
+                      <div class="autocomplete-item">
+                        <div class="avatar avatar-sm"><span>AK</span></div>
+                        <div>
+                          <div class="font-medium">Anna Klein</div>
+                          <div class="text-xs text-surface-500">anna.klein@example.com</div>
+                        </div>
+                      </div>
+                      <div class="autocomplete-item">
+                        <div class="avatar avatar-sm"><span>TM</span></div>
+                        <div>
+                          <div class="font-medium">Thomas Müller</div>
+                          <div class="text-xs text-surface-500">thomas.mueller@example.com</div>
+                        </div>
+                      </div>
+                      <div class="autocomplete-item">
+                        <div class="avatar avatar-sm"><span>SB</span></div>
+                        <div>
+                          <div class="font-medium">Sarah Bauer</div>
+                          <div class="text-xs text-surface-500">sarah.bauer@example.com</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="input-label">Produkt suchen</label>
+                  <div class="input-with-icon">
+                    <svg class="input-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input type="text" class="input" placeholder="Produkt suchen...">
+                    <span class="spinner spinner-sm input-spinner" style="display: none;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+  <script>
+    // Simple autocomplete demo
+    const userSearch = document.getElementById('userSearch');
+    const userDropdown = document.getElementById('userDropdown');
+    
+    userSearch.addEventListener('focus', () => {
+      userDropdown.style.display = 'block';
+    });
+    
+    userSearch.addEventListener('blur', () => {
+      setTimeout(() => {
+        userDropdown.style.display = 'none';
+      }, 200);
+    });
+    
+    // Chip selection
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('chip-selected');
+      });
+    });
+  </script>
+</body>
+</html>
+

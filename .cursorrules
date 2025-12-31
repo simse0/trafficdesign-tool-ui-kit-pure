@@ -1,0 +1,106 @@
+# trafficdesign UI Kit - Cursor Rules
+
+When building UI components in this project, follow these guidelines:
+
+## Required Files
+
+Include these files in your HTML:
+
+```html
+<link rel="stylesheet" href="dist/td-ui-kit.css">
+<script src="dist/td-ui-kit.js"></script>
+```
+
+For charts, also include:
+```html
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="dist/td-charts.js"></script>
+```
+
+## Documentation
+
+- **Quick Reference**: See `docs/AI-CONTEXT.md` for a compact class overview
+- **Full Documentation**: See `docs/COMPONENTS.md` for complete examples
+- **Theming**: See `docs/THEMING.md` for customization
+
+## Key CSS Classes
+
+### Buttons
+- `.btn .btn-primary` - Primary action
+- `.btn .btn-secondary` - Secondary action
+- `.btn .btn-ghost` - Tertiary/ghost
+- `.btn .btn-danger` - Destructive action
+- `.btn .btn-success` - Positive action
+- Sizes: `.btn-xs`, `.btn-sm`, `.btn-lg`
+
+### Cards
+- `.card-tool` - Main card container
+- `.card-tool-header` - Card header with border
+- `.card-tool-body` - Card content area
+- `.card-tool-footer` - Card footer with gray background
+
+### Forms
+- `.input-field` - Text inputs
+- `.select-field` - Select dropdowns
+- `.toggle` + `.toggle-handle` - Toggle switches
+- `.label` - Form labels (add `.label-required` for required)
+- Validation: `.input-field-error`, `.input-field-success`
+
+### Tables
+- `.table-tool` - Base table
+- `.table-tool-striped` - Zebra striping
+- `.table-tool-compact` - Compact spacing
+
+### Alerts & Badges
+- `.alert .alert-success|warning|error|info`
+- `.badge .badge-primary|success|warning|error|info|neutral`
+
+### Navigation
+- `.sidebar` with `.sidebar-link` and `.sidebar-link-active`
+- `.topbar` for header
+- `.breadcrumbs` for breadcrumb navigation
+- `.tabs` with `.tab` and `.tab-active`
+
+## JavaScript API
+
+```javascript
+// Show notifications
+notify('Message', 'success'); // success|error|warning|info
+
+// Modal control
+TDUI.openModal('modal-id');
+TDUI.closeModal('modal-id');
+
+// Sidebar
+TDUI.toggleSidebar();
+
+// Utilities
+TDUI.formatNumber(12345);     // "12.345"
+TDUI.formatCurrency(99.99);   // "99,99 €"
+```
+
+## Data Attributes
+
+- `data-dropdown-trigger` - Opens parent dropdown
+- `data-modal-open="id"` - Opens modal with given ID
+- `data-modal-close` - Closes parent modal
+- `data-tab="id"` - Switches to tab panel
+- `data-tooltip="text"` - Shows tooltip on hover
+
+## Design Principles
+
+1. Use semantic HTML (`<button>` for actions, `<a>` for links)
+2. Add `aria-label` for icon-only buttons
+3. Use the predefined utility classes for spacing/layout
+4. Follow the existing patterns in `examples/` directory
+5. Use CSS variables for theming (see `docs/THEMING.md`)
+
+## Color Palette
+
+- Primary: `--td-brand-primary` (#00AFCE)
+- Success: `--td-success` (#22C55E)
+- Warning: `--td-warning` (#F59E0B)
+- Error: `--td-error` (#EF4444)
+- Info: `--td-info` (#3B82F6)
+- Grays: `--td-surface-50` to `--td-surface-900`
+

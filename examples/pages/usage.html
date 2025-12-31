@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentation - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Komponenten</div>
+          <a href="elements.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+            Elemente
+          </a>
+          <a href="tables.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            Tabellen
+          </a>
+          <a href="forms.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Formulare
+          </a>
+          <a href="notifications.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+            Benachrichtigungen
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Info</div>
+          <a href="usage.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            Dokumentation
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Dokumentation</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Dokumentation</h1>
+          <p class="text-surface-500 mt-1">Anleitung zur Verwendung des trafficdesign UI Kit - Pure CSS/JS Version.</p>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Quick Start -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">🚀 Quick Start</h2>
+            </div>
+            <div class="card-tool-body">
+              <p class="mb-4">Diese Version benötigt <strong>keinen Build-Prozess</strong>. Einfach die Dateien einbinden:</p>
+              <pre class="p-4 bg-surface-100 rounded-lg text-sm overflow-x-auto"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+  &lt;!-- trafficdesign UI Kit CSS --&gt;
+  &lt;link rel="stylesheet" href="dist/td-ui-kit.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Dein Content hier --&gt;
+  
+  &lt;!-- trafficdesign UI Kit JavaScript --&gt;
+  &lt;script src="dist/td-ui-kit.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+          </div>
+          
+          <!-- Dateien -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">📁 Enthaltene Dateien</h2>
+            </div>
+            <div class="card-tool-body">
+              <table class="table-tool">
+                <thead>
+                  <tr>
+                    <th>Datei</th>
+                    <th>Größe</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-sm">dist/td-ui-kit.css</td>
+                    <td>~80 KB</td>
+                    <td>Alle Styles inkl. CSS-Variablen</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-sm">dist/td-ui-kit.js</td>
+                    <td>~15 KB</td>
+                    <td>Vanilla JS für Interaktivität</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-sm">dist/td-charts.js</td>
+                    <td>~10 KB</td>
+                    <td>ApexCharts Theme (optional)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Unterschiede zur Original-Version -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">🔄 Unterschiede zur Original-Version</h2>
+            </div>
+            <div class="card-tool-body">
+              <div class="alert alert-info mb-4">
+                <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <div class="alert-content">
+                  <div class="alert-title">Framework-unabhängig</div>
+                  <div>Diese Version funktioniert ohne Tailwind CSS Build-Prozess und Alpine.js.</div>
+                </div>
+              </div>
+              
+              <table class="table-tool table-tool-striped">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Original</th>
+                    <th>Pure Version</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Build-Tool</td>
+                    <td>Vite + Tailwind CSS</td>
+                    <td><span class="badge badge-success">Keines nötig</span></td>
+                  </tr>
+                  <tr>
+                    <td>CSS</td>
+                    <td>Tailwind + @apply</td>
+                    <td>Vorkompiliertes CSS</td>
+                  </tr>
+                  <tr>
+                    <td>Interaktivität</td>
+                    <td>Alpine.js</td>
+                    <td>Vanilla JavaScript</td>
+                  </tr>
+                  <tr>
+                    <td>NPM erforderlich</td>
+                    <td>Ja</td>
+                    <td><span class="badge badge-success">Nein</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- JavaScript API -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">🛠️ JavaScript API</h2>
+            </div>
+            <div class="card-tool-body">
+              <h3 class="text-sm font-semibold mb-2">Toast Notifications</h3>
+              <pre class="p-3 bg-surface-100 rounded mb-4 text-sm overflow-x-auto"><code>// Einfache Notification
+notify('Nachricht', 'info');
+
+// Mit Typ: success, warning, error, info
+notify('Erfolgreich!', 'success');
+
+// Mit Dauer in Millisekunden
+notify('Kurze Nachricht', 'info', 2000);</code></pre>
+              
+              <div class="flex flex-wrap gap-2 mb-6">
+                <button class="btn btn-success btn-sm" onclick="notify('Erfolgreich!', 'success')">Test Success</button>
+                <button class="btn btn-danger btn-sm" onclick="notify('Fehler!', 'error')">Test Error</button>
+              </div>
+              
+              <h3 class="text-sm font-semibold mb-2">Modals</h3>
+              <pre class="p-3 bg-surface-100 rounded mb-4 text-sm overflow-x-auto"><code>// Modal öffnen
+TDUI.openModal('modal-id');
+
+// Modal schließen
+TDUI.closeModal('modal-id');</code></pre>
+              
+              <h3 class="text-sm font-semibold mb-2">Utilities</h3>
+              <pre class="p-3 bg-surface-100 rounded text-sm overflow-x-auto"><code>// Sidebar Toggle
+TDUI.toggleSidebar();
+
+// Element ein-/ausblenden
+TDUI.show('.selector');
+TDUI.hide('.selector');
+
+// In Zwischenablage kopieren
+TDUI.copyToClipboard('Text');
+
+// Zahlen formatieren
+TDUI.formatNumber(1234567);     // "1.234.567"
+TDUI.formatCurrency(1234.56);   // "1.234,56 €"
+
+// Debounce/Throttle
+const debouncedFn = TDUI.debounce(fn, 300);
+const throttledFn = TDUI.throttle(fn, 100);</code></pre>
+            </div>
+          </div>
+          
+          <!-- CSS Custom Properties -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">🎨 CSS Custom Properties (Theming)</h2>
+            </div>
+            <div class="card-tool-body">
+              <p class="mb-4">Alle Farben sind als CSS-Variablen definiert und können überschrieben werden:</p>
+              <pre class="p-4 bg-surface-100 rounded-lg text-sm overflow-x-auto"><code>:root {
+  /* Brand Colors */
+  --td-brand-primary: #00AFCE;
+  --td-brand-primary-hover: #009AA8;
+  --td-brand-dark: #1d1d1d;
+  --td-brand-light: #E5F2F3;
+
+  /* Semantic Colors */
+  --td-success: #22C55E;
+  --td-warning: #F59E0B;
+  --td-error: #EF4444;
+  --td-info: #3B82F6;
+
+  /* Surface Colors (Grays) */
+  --td-surface-50: #FAFAFA;
+  --td-surface-100: #F5F5F5;
+  --td-surface-200: #E5E5E5;
+  /* ... weitere ... */
+}</code></pre>
+              
+              <p class="mt-4">Um das Theme anzupassen, überschreibe die Variablen in deinem CSS:</p>
+              <pre class="p-3 bg-surface-100 rounded text-sm"><code>:root {
+  --td-brand-primary: #your-color;
+}</code></pre>
+            </div>
+          </div>
+          
+          <!-- Komponenten-Übersicht -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">📦 Komponenten-Übersicht</h2>
+            </div>
+            <div class="card-tool-body">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="elements.html" class="panel panel-padded hover:border-brand-primary transition" style="text-decoration: none;">
+                  <h3 class="font-medium text-brand-dark mb-1">Elemente</h3>
+                  <p class="text-sm text-surface-500">Buttons, Badges, Avatars, Dropdowns, Modals, Progress</p>
+                </a>
+                
+                <a href="forms.html" class="panel panel-padded hover:border-brand-primary transition" style="text-decoration: none;">
+                  <h3 class="font-medium text-brand-dark mb-1">Formulare</h3>
+                  <p class="text-sm text-surface-500">Inputs, Selects, Checkboxes, Toggles, File Upload</p>
+                </a>
+                
+                <a href="tables.html" class="panel panel-padded hover:border-brand-primary transition" style="text-decoration: none;">
+                  <h3 class="font-medium text-brand-dark mb-1">Tabellen</h3>
+                  <p class="text-sm text-surface-500">Standard, Striped, Compact, Pagination</p>
+                </a>
+                
+                <a href="notifications.html" class="panel panel-padded hover:border-brand-primary transition" style="text-decoration: none;">
+                  <h3 class="font-medium text-brand-dark mb-1">Benachrichtigungen</h3>
+                  <p class="text-sm text-surface-500">Alerts, Toasts, Empty States, Timeline</p>
+                </a>
+                
+                <div class="panel panel-padded">
+                  <h3 class="font-medium text-brand-dark mb-1">Navigation</h3>
+                  <p class="text-sm text-surface-500">Sidebar, Topbar, Breadcrumbs, Tabs</p>
+                </div>
+                
+                <div class="panel panel-padded">
+                  <h3 class="font-medium text-brand-dark mb-1">Layout</h3>
+                  <p class="text-sm text-surface-500">Cards, Panels, Grid, Stat Cards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Links -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">🔗 Weiterführende Links</h2>
+            </div>
+            <div class="card-tool-body">
+              <div class="flex flex-wrap gap-4">
+                <a href="https://github.com/simse0/trafficdesign-tool-ui-kit" target="_blank" class="btn btn-secondary">
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Original Repository
+                </a>
+                <a href="https://github.com/simse0/trafficdesign-tool-ui-kit/blob/main/docs/USAGE.md" target="_blank" class="btn btn-secondary">
+                  Original Dokumentation
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

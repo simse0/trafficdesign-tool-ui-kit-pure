@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabellen - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Komponenten</div>
+          <a href="elements.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+            Elemente
+          </a>
+          <a href="tables.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            Tabellen
+          </a>
+          <a href="forms.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Formulare
+          </a>
+          <a href="notifications.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+            Benachrichtigungen
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Tabellen</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Tabellen</h1>
+          <p class="text-surface-500 mt-1">Datentabellen in verschiedenen Varianten.</p>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Standard Table -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Standard Tabelle</h2>
+              <div class="flex gap-2">
+                <button class="btn btn-secondary btn-sm">Exportieren</button>
+                <button class="btn btn-primary btn-sm">+ Neu</button>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="table-tool">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                    <th>Rolle</th>
+                    <th>Status</th>
+                    <th>Erstellt</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-xs">#001</td>
+                    <td class="flex items-center gap-2">
+                      <div class="avatar avatar-xs"><span>AK</span></div>
+                      <span>Anna Klein</span>
+                    </td>
+                    <td>anna.klein@example.com</td>
+                    <td>Administrator</td>
+                    <td><span class="badge badge-success">Aktiv</span></td>
+                    <td class="text-surface-500">12.01.2025</td>
+                    <td>
+                      <div class="dropdown">
+                        <button class="btn-icon" data-dropdown-trigger>
+                          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                          </svg>
+                        </button>
+                        <div class="dropdown-menu right">
+                          <a href="#" class="dropdown-item">Bearbeiten</a>
+                          <a href="#" class="dropdown-item dropdown-item-danger">Löschen</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-xs">#002</td>
+                    <td class="flex items-center gap-2">
+                      <div class="avatar avatar-xs"><span>TM</span></div>
+                      <span>Thomas Müller</span>
+                    </td>
+                    <td>thomas.mueller@example.com</td>
+                    <td>Editor</td>
+                    <td><span class="badge badge-success">Aktiv</span></td>
+                    <td class="text-surface-500">10.01.2025</td>
+                    <td>
+                      <button class="btn-icon">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-xs">#003</td>
+                    <td class="flex items-center gap-2">
+                      <div class="avatar avatar-xs"><span>SB</span></div>
+                      <span>Sarah Bauer</span>
+                    </td>
+                    <td>sarah.bauer@example.com</td>
+                    <td>Viewer</td>
+                    <td><span class="badge badge-warning">Ausstehend</span></td>
+                    <td class="text-surface-500">08.01.2025</td>
+                    <td>
+                      <button class="btn-icon">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-xs">#004</td>
+                    <td class="flex items-center gap-2">
+                      <div class="avatar avatar-xs"><span>MK</span></div>
+                      <span>Max Kunde</span>
+                    </td>
+                    <td>max.kunde@example.com</td>
+                    <td>Editor</td>
+                    <td><span class="badge badge-error">Inaktiv</span></td>
+                    <td class="text-surface-500">05.01.2025</td>
+                    <td>
+                      <button class="btn-icon">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-tool-footer flex items-center justify-between">
+              <span class="text-sm text-surface-500">1-4 von 24 Einträgen</span>
+              <nav class="pagination">
+                <button class="pagination-item pagination-item-disabled">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button class="pagination-item pagination-item-active">1</button>
+                <button class="pagination-item">2</button>
+                <button class="pagination-item">3</button>
+                <button class="pagination-item">...</button>
+                <button class="pagination-item">6</button>
+                <button class="pagination-item">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </nav>
+            </div>
+          </div>
+          
+          <!-- Striped Table -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Gestreifte Tabelle</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="table-tool table-tool-striped">
+                <thead>
+                  <tr>
+                    <th>Produkt</th>
+                    <th>Kategorie</th>
+                    <th>Preis</th>
+                    <th>Lagerbestand</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Premium Widget</td>
+                    <td>Widgets</td>
+                    <td>€99,00</td>
+                    <td>234</td>
+                  </tr>
+                  <tr>
+                    <td>Standard Gadget</td>
+                    <td>Gadgets</td>
+                    <td>€49,00</td>
+                    <td>567</td>
+                  </tr>
+                  <tr>
+                    <td>Basic Tool</td>
+                    <td>Tools</td>
+                    <td>€29,00</td>
+                    <td>1.234</td>
+                  </tr>
+                  <tr>
+                    <td>Pro Service</td>
+                    <td>Services</td>
+                    <td>€199,00</td>
+                    <td>∞</td>
+                  </tr>
+                  <tr>
+                    <td>Enterprise Package</td>
+                    <td>Packages</td>
+                    <td>€499,00</td>
+                    <td>89</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Compact Table -->
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h2 class="font-semibold">Kompakte Tabelle</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="table-tool table-tool-compact">
+                <thead>
+                  <tr>
+                    <th>Datum</th>
+                    <th>Beschreibung</th>
+                    <th>Betrag</th>
+                    <th>Typ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-surface-500">31.12.2025</td>
+                    <td>Monatliche Gebühr</td>
+                    <td class="text-error">-€49,99</td>
+                    <td><span class="badge badge-error">Ausgabe</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-surface-500">30.12.2025</td>
+                    <td>Verkauf #4521</td>
+                    <td class="text-success">+€234,00</td>
+                    <td><span class="badge badge-success">Einnahme</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-surface-500">28.12.2025</td>
+                    <td>Verkauf #4520</td>
+                    <td class="text-success">+€89,00</td>
+                    <td><span class="badge badge-success">Einnahme</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-surface-500">27.12.2025</td>
+                    <td>API-Gebühren</td>
+                    <td class="text-error">-€12,50</td>
+                    <td><span class="badge badge-error">Ausgabe</span></td>
+                  </tr>
+                  <tr>
+                    <td class="text-surface-500">25.12.2025</td>
+                    <td>Verkauf #4519</td>
+                    <td class="text-success">+€567,00</td>
+                    <td><span class="badge badge-success">Einnahme</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

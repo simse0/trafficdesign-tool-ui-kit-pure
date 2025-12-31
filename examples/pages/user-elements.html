@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User-Elemente - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Benutzer</div>
+          <a href="user-elements.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+            User-Elemente
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">User-Elemente</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">User-Elemente</h1>
+          <p class="text-surface-500 mt-1">Komponenten für Benutzer-Darstellungen und Profile.</p>
+        </div>
+        
+        <!-- Avatars -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Avatare</h2>
+          <div class="card-tool">
+            <div class="card-tool-body">
+              
+              <h3 class="text-sm font-medium text-surface-600 mb-3">Größen</h3>
+              <div class="flex items-end gap-4 mb-6">
+                <div class="avatar avatar-xs"><span>XS</span></div>
+                <div class="avatar avatar-sm"><span>SM</span></div>
+                <div class="avatar avatar-md"><span>MD</span></div>
+                <div class="avatar avatar-lg"><span>LG</span></div>
+                <div class="avatar avatar-xl"><span>XL</span></div>
+              </div>
+              
+              <h3 class="text-sm font-medium text-surface-600 mb-3">Mit Initialen</h3>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="avatar avatar-md"><span>AK</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-success);"><span>TM</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-warning);"><span>SB</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-error);"><span>MK</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-info);"><span>JD</span></div>
+              </div>
+              
+              <h3 class="text-sm font-medium text-surface-600 mb-3">Mit Status-Indikator</h3>
+              <div class="flex items-center gap-4">
+                <div class="avatar avatar-md">
+                  <span>AK</span>
+                  <span class="avatar-status avatar-status-online"></span>
+                </div>
+                <div class="avatar avatar-md" style="background-color: var(--td-success);">
+                  <span>TM</span>
+                  <span class="avatar-status avatar-status-away"></span>
+                </div>
+                <div class="avatar avatar-md" style="background-color: var(--td-warning);">
+                  <span>SB</span>
+                  <span class="avatar-status avatar-status-busy"></span>
+                </div>
+                <div class="avatar avatar-md" style="background-color: var(--td-error);">
+                  <span>MK</span>
+                  <span class="avatar-status avatar-status-offline"></span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        
+        <!-- Avatar Groups -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Avatar-Gruppen</h2>
+          <div class="card-tool">
+            <div class="card-tool-body">
+              
+              <h3 class="text-sm font-medium text-surface-600 mb-3">Standard Gruppe</h3>
+              <div class="avatar-group mb-6">
+                <div class="avatar avatar-md"><span>AK</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-success);"><span>TM</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-warning);"><span>SB</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-error);"><span>MK</span></div>
+              </div>
+              
+              <h3 class="text-sm font-medium text-surface-600 mb-3">Mit Overflow-Indikator</h3>
+              <div class="avatar-group">
+                <div class="avatar avatar-md"><span>AK</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-success);"><span>TM</span></div>
+                <div class="avatar avatar-md" style="background-color: var(--td-warning);"><span>SB</span></div>
+                <div class="avatar avatar-md avatar-overflow"><span>+5</span></div>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        
+        <!-- User Cards -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">User Cards</h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            
+            <!-- Simple User Card -->
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="avatar avatar-lg"><span>AK</span></div>
+                <span class="badge badge-success">Online</span>
+              </div>
+              <div class="user-card-body">
+                <h3 class="user-card-name">Anna Klein</h3>
+                <p class="user-card-role">Administratorin</p>
+                <p class="user-card-email">anna.klein@example.com</p>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn btn-sm btn-secondary">Profil</button>
+                <button class="btn btn-sm btn-primary">Nachricht</button>
+              </div>
+            </div>
+            
+            <!-- User Card with Stats -->
+            <div class="user-card">
+              <div class="user-card-header">
+                <div class="avatar avatar-lg" style="background-color: var(--td-success);"><span>TM</span></div>
+                <span class="badge badge-warning">Abwesend</span>
+              </div>
+              <div class="user-card-body">
+                <h3 class="user-card-name">Thomas Müller</h3>
+                <p class="user-card-role">Lead Designer</p>
+                <div class="user-card-stats">
+                  <div class="user-card-stat">
+                    <span class="user-card-stat-value">127</span>
+                    <span class="user-card-stat-label">Projekte</span>
+                  </div>
+                  <div class="user-card-stat">
+                    <span class="user-card-stat-value">4.8</span>
+                    <span class="user-card-stat-label">Rating</span>
+                  </div>
+                  <div class="user-card-stat">
+                    <span class="user-card-stat-value">3J</span>
+                    <span class="user-card-stat-label">Dabei</span>
+                  </div>
+                </div>
+              </div>
+              <div class="user-card-footer">
+                <button class="btn btn-sm btn-primary" style="width: 100%;">Profil anzeigen</button>
+              </div>
+            </div>
+            
+            <!-- Compact User Card -->
+            <div class="user-card user-card-compact">
+              <div class="avatar avatar-md" style="background-color: var(--td-warning);"><span>SB</span></div>
+              <div class="user-card-body">
+                <h3 class="user-card-name">Sarah Bauer</h3>
+                <p class="user-card-role">Frontend Developer</p>
+              </div>
+              <button class="btn-icon">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- User Lists -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Benutzer-Listen</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+            
+            <!-- Simple List -->
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Team-Mitglieder</h3>
+                <span class="text-sm text-surface-500">8 Mitglieder</span>
+              </div>
+              <div class="card-tool-body">
+                <div class="user-list">
+                  <div class="user-list-item">
+                    <div class="avatar avatar-md"><span>AK</span></div>
+                    <div class="user-list-info">
+                      <div class="user-list-name">Anna Klein</div>
+                      <div class="user-list-meta">Administratorin • 5 Projekte aktiv</div>
+                    </div>
+                  </div>
+                  <div class="user-list-item">
+                    <div class="avatar avatar-md" style="background-color: var(--td-success);"><span>TM</span></div>
+                    <div class="user-list-info">
+                      <div class="user-list-name">Thomas Müller</div>
+                      <div class="user-list-meta">Designer • 3 Projekte aktiv</div>
+                    </div>
+                  </div>
+                  <div class="user-list-item">
+                    <div class="avatar avatar-md" style="background-color: var(--td-warning);"><span>SB</span></div>
+                    <div class="user-list-info">
+                      <div class="user-list-name">Sarah Bauer</div>
+                      <div class="user-list-meta">Entwicklerin • 7 Projekte aktiv</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- List with Actions -->
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Einladungen</h3>
+                <button class="btn btn-sm btn-primary">+ Einladen</button>
+              </div>
+              <div class="card-tool-body">
+                <div class="user-list">
+                  <div class="user-list-item">
+                    <div class="avatar avatar-md" style="background-color: var(--td-surface-300);"><span>?</span></div>
+                    <div class="user-list-info">
+                      <div class="user-list-name">max.mustermann@example.com</div>
+                      <div class="user-list-meta">Eingeladen vor 2 Tagen</div>
+                    </div>
+                    <span class="badge badge-warning">Ausstehend</span>
+                  </div>
+                  <div class="user-list-item">
+                    <div class="avatar avatar-md" style="background-color: var(--td-surface-300);"><span>?</span></div>
+                    <div class="user-list-info">
+                      <div class="user-list-name">lisa.schmidt@example.com</div>
+                      <div class="user-list-meta">Eingeladen vor 5 Tagen</div>
+                    </div>
+                    <span class="badge badge-warning">Ausstehend</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Profile Header -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Profil-Header</h2>
+          <div class="profile-header">
+            <div class="profile-header-bg"></div>
+            <div class="profile-header-content">
+              <div class="profile-header-avatar">
+                <div class="avatar avatar-xl"><span>AK</span></div>
+                <span class="avatar-status avatar-status-online" style="width: 16px; height: 16px; border-width: 3px;"></span>
+              </div>
+              <div class="profile-header-info">
+                <h2 class="profile-header-name">Anna Klein</h2>
+                <p class="profile-header-role">System-Administratorin</p>
+                <div class="profile-header-meta">
+                  <span>
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    Berlin, Deutschland
+                  </span>
+                  <span>
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    Dabei seit Jan 2022
+                  </span>
+                </div>
+              </div>
+              <div class="profile-header-actions">
+                <button class="btn btn-secondary">Bearbeiten</button>
+                <button class="btn btn-primary">Nachricht</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

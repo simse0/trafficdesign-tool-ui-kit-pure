@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflows - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Prozesse</div>
+          <a href="workflows.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+            Workflows
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Workflows</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Workflows</h1>
+          <p class="text-surface-500 mt-1">Prozess-Darstellungen und Workflow-Komponenten.</p>
+        </div>
+        
+        <!-- Horizontal Stepper -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Horizontaler Workflow-Stepper</h2>
+          <div class="card-tool">
+            <div class="card-tool-body">
+              <div class="workflow-stepper">
+                <div class="workflow-step workflow-step-completed">
+                  <div class="workflow-step-icon">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <div class="workflow-step-content">
+                    <div class="workflow-step-title">Anfrage erstellt</div>
+                    <div class="workflow-step-date">15. Jan 2025, 10:30</div>
+                  </div>
+                </div>
+                <div class="workflow-connector workflow-connector-completed"></div>
+                <div class="workflow-step workflow-step-completed">
+                  <div class="workflow-step-icon">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <div class="workflow-step-content">
+                    <div class="workflow-step-title">Geprüft</div>
+                    <div class="workflow-step-date">15. Jan 2025, 14:15</div>
+                  </div>
+                </div>
+                <div class="workflow-connector workflow-connector-completed"></div>
+                <div class="workflow-step workflow-step-active">
+                  <div class="workflow-step-icon">3</div>
+                  <div class="workflow-step-content">
+                    <div class="workflow-step-title">In Bearbeitung</div>
+                    <div class="workflow-step-date">Aktuell</div>
+                  </div>
+                </div>
+                <div class="workflow-connector"></div>
+                <div class="workflow-step">
+                  <div class="workflow-step-icon">4</div>
+                  <div class="workflow-step-content">
+                    <div class="workflow-step-title">Genehmigung</div>
+                    <div class="workflow-step-date">Ausstehend</div>
+                  </div>
+                </div>
+                <div class="workflow-connector"></div>
+                <div class="workflow-step">
+                  <div class="workflow-step-icon">5</div>
+                  <div class="workflow-step-content">
+                    <div class="workflow-step-title">Abgeschlossen</div>
+                    <div class="workflow-step-date">Ausstehend</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Vertical Timeline Workflow -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Vertikaler Workflow</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+            
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Bestellungs-Workflow</h3>
+                <span class="badge badge-warning">In Bearbeitung</span>
+              </div>
+              <div class="card-tool-body">
+                <div class="vertical-workflow">
+                  <div class="vertical-workflow-item vertical-workflow-completed">
+                    <div class="vertical-workflow-marker">
+                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </div>
+                    <div class="vertical-workflow-content">
+                      <div class="vertical-workflow-title">Bestellung eingegangen</div>
+                      <div class="vertical-workflow-desc">Bestellung #12345 wurde erfasst</div>
+                      <div class="vertical-workflow-time">vor 2 Stunden</div>
+                    </div>
+                  </div>
+                  <div class="vertical-workflow-item vertical-workflow-completed">
+                    <div class="vertical-workflow-marker">
+                      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </div>
+                    <div class="vertical-workflow-content">
+                      <div class="vertical-workflow-title">Zahlung bestätigt</div>
+                      <div class="vertical-workflow-desc">Zahlung über €149,00 eingegangen</div>
+                      <div class="vertical-workflow-time">vor 1 Stunde</div>
+                    </div>
+                  </div>
+                  <div class="vertical-workflow-item vertical-workflow-active">
+                    <div class="vertical-workflow-marker">
+                      <span class="spinner spinner-sm"></span>
+                    </div>
+                    <div class="vertical-workflow-content">
+                      <div class="vertical-workflow-title">Wird verpackt</div>
+                      <div class="vertical-workflow-desc">Artikel werden vorbereitet</div>
+                      <div class="vertical-workflow-time">Jetzt</div>
+                    </div>
+                  </div>
+                  <div class="vertical-workflow-item">
+                    <div class="vertical-workflow-marker">4</div>
+                    <div class="vertical-workflow-content">
+                      <div class="vertical-workflow-title">Versand</div>
+                      <div class="vertical-workflow-desc">Übergabe an Lieferdienst</div>
+                    </div>
+                  </div>
+                  <div class="vertical-workflow-item">
+                    <div class="vertical-workflow-marker">5</div>
+                    <div class="vertical-workflow-content">
+                      <div class="vertical-workflow-title">Zugestellt</div>
+                      <div class="vertical-workflow-desc">Lieferung abgeschlossen</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Genehmigungsprozess</h3>
+                <span class="badge badge-primary">Aktiv</span>
+              </div>
+              <div class="card-tool-body">
+                <div class="approval-workflow">
+                  <div class="approval-item approval-approved">
+                    <div class="approval-avatar">
+                      <div class="avatar avatar-sm"><span>AK</span></div>
+                    </div>
+                    <div class="approval-content">
+                      <div class="approval-name">Anna Klein</div>
+                      <div class="approval-role">Team Lead</div>
+                      <div class="approval-status">
+                        <span class="badge badge-success">Genehmigt</span>
+                        <span class="approval-date">15. Jan, 14:30</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="approval-item approval-approved">
+                    <div class="approval-avatar">
+                      <div class="avatar avatar-sm" style="background-color: var(--td-success);"><span>TM</span></div>
+                    </div>
+                    <div class="approval-content">
+                      <div class="approval-name">Thomas Müller</div>
+                      <div class="approval-role">Abteilungsleiter</div>
+                      <div class="approval-status">
+                        <span class="badge badge-success">Genehmigt</span>
+                        <span class="approval-date">15. Jan, 16:00</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="approval-item approval-pending">
+                    <div class="approval-avatar">
+                      <div class="avatar avatar-sm" style="background-color: var(--td-warning);"><span>SB</span></div>
+                    </div>
+                    <div class="approval-content">
+                      <div class="approval-name">Sarah Bauer</div>
+                      <div class="approval-role">Finanzen</div>
+                      <div class="approval-status">
+                        <span class="badge badge-warning">Ausstehend</span>
+                      </div>
+                      <div class="approval-actions mt-2">
+                        <button class="btn btn-sm btn-success">Genehmigen</button>
+                        <button class="btn btn-sm btn-error">Ablehnen</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Kanban-style Workflow -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Kanban-Workflow</h2>
+          <div class="kanban-board">
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h3>Zu erledigen</h3>
+                <span class="badge badge-neutral">3</span>
+              </div>
+              <div class="kanban-column-body">
+                <div class="kanban-card">
+                  <div class="kanban-card-title">Homepage Redesign</div>
+                  <div class="kanban-card-desc">Neue Landingpage gestalten</div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-primary">Design</span>
+                    <div class="avatar avatar-xs"><span>AK</span></div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="kanban-card-title">API Integration</div>
+                  <div class="kanban-card-desc">Payment Gateway anbinden</div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-error">Hoch</span>
+                    <div class="avatar avatar-xs" style="background-color: var(--td-success);"><span>TM</span></div>
+                  </div>
+                </div>
+                <div class="kanban-card">
+                  <div class="kanban-card-title">Dokumentation</div>
+                  <div class="kanban-card-desc">API Docs aktualisieren</div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-warning">Mittel</span>
+                    <div class="avatar avatar-xs" style="background-color: var(--td-warning);"><span>SB</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h3>In Arbeit</h3>
+                <span class="badge badge-primary">2</span>
+              </div>
+              <div class="kanban-column-body">
+                <div class="kanban-card kanban-card-active">
+                  <div class="kanban-card-title">Dashboard Charts</div>
+                  <div class="kanban-card-desc">ApexCharts einbinden</div>
+                  <div class="kanban-card-progress">
+                    <div class="progress-bar" style="height: 4px;">
+                      <div class="progress-bar-fill" style="width: 60%;"></div>
+                    </div>
+                    <span>60%</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-primary">Dev</span>
+                    <div class="avatar avatar-xs"><span>AK</span></div>
+                  </div>
+                </div>
+                <div class="kanban-card kanban-card-active">
+                  <div class="kanban-card-title">User Auth</div>
+                  <div class="kanban-card-desc">Login & Register Flow</div>
+                  <div class="kanban-card-progress">
+                    <div class="progress-bar" style="height: 4px;">
+                      <div class="progress-bar-fill" style="width: 80%;"></div>
+                    </div>
+                    <span>80%</span>
+                  </div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-error">Hoch</span>
+                    <div class="avatar avatar-xs" style="background-color: var(--td-success);"><span>TM</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h3>Review</h3>
+                <span class="badge badge-warning">1</span>
+              </div>
+              <div class="kanban-column-body">
+                <div class="kanban-card">
+                  <div class="kanban-card-title">Mobile Navigation</div>
+                  <div class="kanban-card-desc">Responsive Menu implementieren</div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-success">Fertig</span>
+                    <div class="avatar avatar-xs" style="background-color: var(--td-warning);"><span>SB</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="kanban-column">
+              <div class="kanban-column-header">
+                <h3>Erledigt</h3>
+                <span class="badge badge-success">4</span>
+              </div>
+              <div class="kanban-column-body">
+                <div class="kanban-card kanban-card-done">
+                  <div class="kanban-card-title">Setup Projekt</div>
+                  <div class="kanban-card-desc">Vite + Tailwind konfigurieren</div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-success">Erledigt</span>
+                  </div>
+                </div>
+                <div class="kanban-card kanban-card-done">
+                  <div class="kanban-card-title">Design System</div>
+                  <div class="kanban-card-desc">Farben & Typography definieren</div>
+                  <div class="kanban-card-footer">
+                    <span class="badge badge-success">Erledigt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenvisualisierung - trafficdesign UI Kit</title>
+  <link rel="stylesheet" href="../../dist/td-ui-kit.css">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.45.1/dist/apexcharts.min.js"></script>
+</head>
+<body>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" style="color: var(--td-brand-primary);">
+          <rect x="2" y="2" width="12" height="12" rx="2"/>
+          <rect x="18" y="2" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="2" y="18" width="12" height="12" rx="2" opacity="0.6"/>
+          <rect x="18" y="18" width="12" height="12" rx="2" opacity="0.3"/>
+        </svg>
+        <span class="text-lg font-bold text-white">trafficdesign</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Übersicht</div>
+          <a href="../index.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Dashboard
+          </a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Daten</div>
+          <a href="charts.html" class="sidebar-link">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+            Charts
+          </a>
+          <a href="data-viz.html" class="sidebar-link sidebar-link-active">
+            <svg class="sidebar-link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+            </svg>
+            Datenvisualisierung
+          </a>
+        </div>
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0">
+      
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="btn-icon" onclick="TDUI.toggleSidebar()">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <nav class="breadcrumbs">
+            <a href="../index.html" class="breadcrumbs-item">Home</a>
+            <span class="breadcrumbs-separator">/</span>
+            <span class="breadcrumbs-current">Datenvisualisierung</span>
+          </nav>
+        </div>
+      </header>
+      
+      <!-- Page Content -->
+      <main class="flex-1 p-6 overflow-auto">
+        
+        <div class="mb-6">
+          <h1 class="text-3xl font-bold text-brand-dark">Datenvisualisierung</h1>
+          <p class="text-surface-500 mt-1">Erweiterte Daten-Komponenten und KPI-Darstellungen.</p>
+        </div>
+        
+        <!-- KPI Cards -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">KPI Cards mit Trends</h2>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+            
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Monatlicher Umsatz</span>
+                <span class="badge badge-success">+15%</span>
+              </div>
+              <div class="kpi-value">€128.450</div>
+              <div class="kpi-sparkline" id="kpi1"></div>
+              <div class="kpi-footer">
+                <span class="text-surface-500">vs. Vormonat</span>
+              </div>
+            </div>
+            
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Neue Kunden</span>
+                <span class="badge badge-success">+23%</span>
+              </div>
+              <div class="kpi-value">847</div>
+              <div class="kpi-sparkline" id="kpi2"></div>
+              <div class="kpi-footer">
+                <span class="text-surface-500">vs. Vormonat</span>
+              </div>
+            </div>
+            
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Conversion Rate</span>
+                <span class="badge badge-warning">-2%</span>
+              </div>
+              <div class="kpi-value">3.24%</div>
+              <div class="kpi-sparkline" id="kpi3"></div>
+              <div class="kpi-footer">
+                <span class="text-surface-500">vs. Vormonat</span>
+              </div>
+            </div>
+            
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Support Tickets</span>
+                <span class="badge badge-error">+45%</span>
+              </div>
+              <div class="kpi-value">156</div>
+              <div class="kpi-sparkline" id="kpi4"></div>
+              <div class="kpi-footer">
+                <span class="text-surface-500">vs. Vormonat</span>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Progress Indicators -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Fortschrittsanzeigen</h2>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+            
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Projekt-Fortschritt</h3>
+              </div>
+              <div class="card-tool-body">
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>Design Phase</span>
+                      <span class="font-medium text-success">100%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success">
+                      <div class="progress-bar-fill" style="width: 100%;"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>Development</span>
+                      <span class="font-medium text-brand-primary">68%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-bar-fill" style="width: 68%;"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>Testing</span>
+                      <span class="font-medium text-warning">25%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning">
+                      <div class="progress-bar-fill" style="width: 25%;"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>Deployment</span>
+                      <span class="font-medium text-surface-400">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-bar-fill" style="width: 0%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-tool">
+              <div class="card-tool-header">
+                <h3 class="font-semibold">Radiale Fortschrittsanzeigen</h3>
+              </div>
+              <div class="card-tool-body">
+                <div id="radialProgress" style="height: 200px;"></div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- Data Comparison -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Datenvergleich</h2>
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h3 class="font-semibold">Jahresvergleich nach Kategorie</h3>
+              <div class="flex gap-2">
+                <button class="btn btn-sm btn-primary">2024</button>
+                <button class="btn btn-sm btn-secondary">2023</button>
+                <button class="btn btn-sm btn-secondary">2022</button>
+              </div>
+            </div>
+            <div class="card-tool-body">
+              <div id="comparisonChart" style="height: 350px;"></div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Data Table with Visualization -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Daten-Tabelle mit Visualisierung</h2>
+          <div class="card-tool">
+            <div class="card-tool-header">
+              <h3 class="font-semibold">Top Produkte</h3>
+            </div>
+            <div class="card-tool-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Produkt</th>
+                    <th>Verkäufe</th>
+                    <th>Performance</th>
+                    <th>Umsatz</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium">Premium Plan</td>
+                    <td>1.234</td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div class="progress-bar" style="width: 100px; height: 6px;">
+                          <div class="progress-bar-fill" style="width: 92%;"></div>
+                        </div>
+                        <span class="text-sm text-surface-500">92%</span>
+                      </div>
+                    </td>
+                    <td>€45.230</td>
+                    <td class="text-success">+12%</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Business Plan</td>
+                    <td>892</td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div class="progress-bar" style="width: 100px; height: 6px;">
+                          <div class="progress-bar-fill" style="width: 78%;"></div>
+                        </div>
+                        <span class="text-sm text-surface-500">78%</span>
+                      </div>
+                    </td>
+                    <td>€32.100</td>
+                    <td class="text-success">+8%</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Starter Plan</td>
+                    <td>567</td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div class="progress-bar" style="width: 100px; height: 6px;">
+                          <div class="progress-bar-fill" style="width: 45%;"></div>
+                        </div>
+                        <span class="text-sm text-surface-500">45%</span>
+                      </div>
+                    </td>
+                    <td>€12.450</td>
+                    <td class="text-error">-3%</td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">Enterprise</td>
+                    <td>45</td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div class="progress-bar" style="width: 100px; height: 6px;">
+                          <div class="progress-bar-fill" style="width: 65%;"></div>
+                        </div>
+                        <span class="text-sm text-surface-500">65%</span>
+                      </div>
+                    </td>
+                    <td>€89.000</td>
+                    <td class="text-success">+25%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Mini Charts Grid -->
+        <section class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Mini-Chart Grid</h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+            
+            <div class="card-tool">
+              <div class="card-tool-body p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-surface-500">Seitenaufrufe</span>
+                  <span class="text-success text-sm font-medium">+18%</span>
+                </div>
+                <div class="text-2xl font-bold">24.5K</div>
+                <div id="miniChart1" style="height: 60px;"></div>
+              </div>
+            </div>
+            
+            <div class="card-tool">
+              <div class="card-tool-body p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-surface-500">Bounce Rate</span>
+                  <span class="text-error text-sm font-medium">+5%</span>
+                </div>
+                <div class="text-2xl font-bold">32.1%</div>
+                <div id="miniChart2" style="height: 60px;"></div>
+              </div>
+            </div>
+            
+            <div class="card-tool">
+              <div class="card-tool-body p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-surface-500">Verweildauer</span>
+                  <span class="text-success text-sm font-medium">+12%</span>
+                </div>
+                <div class="text-2xl font-bold">4:32 min</div>
+                <div id="miniChart3" style="height: 60px;"></div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+      </main>
+    </div>
+  </div>
+  
+  <script src="../../dist/td-ui-kit.js"></script>
+  <script src="../../dist/td-charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // KPI Sparklines
+      const sparkOptions = {
+        chart: { type: 'area', sparkline: { enabled: true }, height: 50 },
+        stroke: { curve: 'smooth', width: 2 },
+        fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0.1 } },
+        tooltip: { enabled: false }
+      };
+      
+      new ApexCharts(document.querySelector('#kpi1'), {
+        ...sparkOptions,
+        series: [{ data: [31, 40, 28, 51, 42, 109, 100] }],
+        colors: ['#22C55E']
+      }).render();
+      
+      new ApexCharts(document.querySelector('#kpi2'), {
+        ...sparkOptions,
+        series: [{ data: [11, 32, 45, 32, 34, 52, 41] }],
+        colors: ['#22C55E']
+      }).render();
+      
+      new ApexCharts(document.querySelector('#kpi3'), {
+        ...sparkOptions,
+        series: [{ data: [15, 25, 35, 30, 28, 26, 24] }],
+        colors: ['#F59E0B']
+      }).render();
+      
+      new ApexCharts(document.querySelector('#kpi4'), {
+        ...sparkOptions,
+        series: [{ data: [40, 55, 65, 85, 100, 120, 156] }],
+        colors: ['#EF4444']
+      }).render();
+      
+      // Radial Progress
+      new ApexCharts(document.querySelector('#radialProgress'), {
+        ...TDUICharts.theme,
+        chart: { type: 'radialBar', height: 200 },
+        series: [85, 68, 45],
+        labels: ['Design', 'Code', 'Test'],
+        plotOptions: {
+          radialBar: {
+            dataLabels: {
+              name: { fontSize: '12px' },
+              value: { fontSize: '14px' },
+              total: { show: true, label: 'Gesamt', formatter: () => '66%' }
+            }
+          }
+        }
+      }).render();
+      
+      // Comparison Chart
+      new ApexCharts(document.querySelector('#comparisonChart'), {
+        ...TDUICharts.theme,
+        chart: { type: 'bar', height: 350 },
+        series: [
+          { name: 'Q1', data: [44, 55, 41, 67] },
+          { name: 'Q2', data: [53, 32, 33, 52] },
+          { name: 'Q3', data: [12, 17, 11, 9] },
+          { name: 'Q4', data: [32, 45, 55, 48] }
+        ],
+        xaxis: { categories: ['Design', 'Development', 'Marketing', 'Sales'] },
+        plotOptions: { bar: { horizontal: false, columnWidth: '55%', borderRadius: 4 } }
+      }).render();
+      
+      // Mini Charts
+      const miniOptions = {
+        chart: { type: 'area', sparkline: { enabled: true }, height: 60 },
+        stroke: { curve: 'smooth', width: 2 },
+        fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.3, opacityTo: 0.1 } },
+        tooltip: { enabled: false }
+      };
+      
+      new ApexCharts(document.querySelector('#miniChart1'), {
+        ...miniOptions,
+        series: [{ data: [18, 21, 19, 24, 22, 26, 24] }],
+        colors: ['#00AFCE']
+      }).render();
+      
+      new ApexCharts(document.querySelector('#miniChart2'), {
+        ...miniOptions,
+        series: [{ data: [28, 30, 32, 29, 31, 33, 32] }],
+        colors: ['#EF4444']
+      }).render();
+      
+      new ApexCharts(document.querySelector('#miniChart3'), {
+        ...miniOptions,
+        series: [{ data: [3.5, 4.0, 3.8, 4.2, 4.5, 4.3, 4.5] }],
+        colors: ['#22C55E']
+      }).render();
+      
+    });
+  </script>
+</body>
+</html>
+
